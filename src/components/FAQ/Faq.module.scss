@@ -1,0 +1,73 @@
+@import '../../styles/variables';
+
+.root {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: $milk;
+    padding: 5% 0%;
+    .wrapper {
+        width: 80%;
+        display: grid;
+        place-items: center;
+        h1 {
+            font-size: calc(#{$size}*1.3);
+            font-weight: 800;
+            color: $black;
+            margin-bottom: 5%;
+        }
+        .accordion {
+            width: 100%;
+            button {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $black;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                transition: all .3s;
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+            h3 {
+                font-family: 'Montserrat';
+                font-weight: 400;
+                color: $black;
+                font-size: calc(#{$size});
+            }
+            img {
+                width: 2%;
+                height: 100%;
+            }
+            div {
+                color: $black;
+                font-size: calc(#{$size}/1.45);
+                padding: 1% 0%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .root {
+        padding-bottom: 7% !important;
+    }
+   .wrapper {
+        width: 90% !important;
+        h1 {
+            font-size: 20px !important;
+        }
+        h3 {
+            font-size: 15px !important;
+        }
+        div {
+            font-size: 12px !important;
+        }
+        img {
+            width: 3.5% !important;
+        }
+    }
+}

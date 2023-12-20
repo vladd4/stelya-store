@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.root {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: $orange;
+    padding: 1% 0%;
+    padding-bottom: 2%;
+    h1 {
+        font-weight: 800;
+        color: $black;
+        font-size: calc(#{$size}*1.3);
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .root {
+        h1 {
+            font-size: 20px !important;
+        }
+        padding-bottom: 5% !important;
+    }
+}

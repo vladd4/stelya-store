@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.root {
+    display: grid;
+    place-items: center;
+    width: 40%;
+    img {
+        width: 15%;
+        height: 100%;
+    }
+    h5 {
+        font-size: calc(#{$size}*1.2);
+        font-weight: 500;
+        margin: 3% 0%;
+        text-align: start;
+        width: 100%;
+    }
+    p {
+        font-size: calc(#{$size}/1.5);
+        text-align: start;
+        margin: 0;
+    }
+}
+.right_block {
+    display: grid;
+    place-items: center;
+    width: 40%;
+    align-self: flex-end;
+    img {
+        width: 15%;
+        height: 100%;
+    }
+    h5 {
+        font-size: calc(#{$size}*1.2);
+        font-weight: 500;
+        margin: 3% 0%;
+        text-align: end;
+        width: 100%;
+    }
+    p {
+        font-size: calc(#{$size}/1.5);
+        text-align: end;
+        margin: 0;
+    }    
+}
+@media screen and (max-width: 600px) {
+    .root {
+        width: 100% !important;
+        margin-bottom: 10% !important;
+    }
+}

@@ -1,0 +1,157 @@
+@import '../../styles/variables';
+
+.root {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: $black;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    color: $white;
+    .wrapper {
+        width: 80%;
+        display: grid;
+        place-items: center;
+        h1 {
+            color: $white;
+            font-weight: 800;
+            font-size: calc(#{$size}*1.5);
+            margin-bottom: 7%;
+        }
+        .info_block {
+            width: 100%;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            .mobile_links_block {
+                display: none;
+                width: 100%;
+                margin-bottom: 2%;
+                select {
+                    width: 100%;
+                    background-color: transparent;
+                    border: 1px solid $white;
+                    color: $white;
+                    font-size: 12px;
+                    padding: 2%;
+                    outline: none;
+                    option {
+                        background-color: $black;
+                    }
+                }
+            }
+            .links_block {
+                display: grid;
+                place-items: flex-start;
+                width: 60%;
+                a {
+                    color: $white;
+                    font-size: calc(#{$size}*1.35);
+                    font-weight: 800;
+                    width: 70%;
+                    cursor: pointer;
+                    transition: all .3s;
+                    margin: 0;
+                    padding: 2% 1%;
+                    &:hover {
+                        background: linear-gradient(90deg, #777777 0%, rgba(80.75, 80.75, 80.75, 0) 100%);
+                    }
+                    b {
+                        font-size: calc(#{$size}*1.7);
+                    }
+                }
+                .current {
+                    background: linear-gradient(90deg, #777777 0%, rgba(80.75, 80.75, 80.75, 0) 100%);
+                }
+            }
+            .image_block {
+                display: grid;
+                place-items: center;
+                position: sticky !important;
+                top: 15%;
+                width: 40%;
+                color: $white;
+                p {
+                    font-weight: 300;
+                    font-size: calc(#{$size}/1.4);
+                    text-align: center;
+                }
+                a {
+                    background-color: transparent;
+                    border-radius: 50px;
+                    border: 1px solid $white;
+                    text-decoration: none;
+                    font-family: 'Montserrat';
+                    font-size: calc(#{$size}/1.5);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 45%;
+                    color: $white;
+                    padding: 1.5% 0%;
+                    cursor: pointer;
+                    transition: all .3s;
+                    margin-bottom: 5%;
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                    img {
+                        width: 15%;
+                        height: 100%;
+                    }
+                }
+                img {
+                    width: 90%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .root {
+        .links_block {
+            a, b {
+                font-size: calc(#{$size}*1.2) !important;
+            }
+        }
+        .image_block {
+            width: 50% !important;
+            a {
+                width: 55% !important;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .root {
+        padding-bottom: 10% !important;
+        .wrapper {
+            h1 {
+                font-size: 20px !important;
+            }
+            .info_block {
+                flex-direction: column;
+                justify-content: center !important;
+                align-items: center !important;
+                .links_block {
+                    display: none !important;
+                }
+                .mobile_links_block {
+                    display: block !important;
+                }
+                .image_block {
+                    width: 100% !important;
+                     p, button {
+                        font-size: 12px !important;
+                     }
+                     a {
+                        padding: 1% 0% !important;
+                        margin-top: 3% !important;
+                        margin-bottom: 5% !important;
+                    }
+                }
+            }
+        }
+    }
+}
