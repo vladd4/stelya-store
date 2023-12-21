@@ -10,6 +10,9 @@ import ProductInfo from "./ProductInfo/ProductInfo";
 import HomePage from "../pages/HomePage";
 
 import { Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchPartners } from "../redux/slices/partnerSlice";
 
 window.onload = function () {
   document.body.classList.remove("loaded");
@@ -21,6 +24,11 @@ window.onload = function () {
 };
 
 function App() {
+  const partners = useSelector((state) => state.partner);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchPartners());
+  }, []);
   return (
     <div className="App">
       <Loader />
@@ -31,7 +39,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductInfo />} />
       </Routes>
-      <Products title="НАШІ ПАРТНЕРИ" id="partners" />
+      <Products title="НАШІ ПАРТНЕРИ" id="partners" images={partners.images} />
       <Footer />
     </div>
   );

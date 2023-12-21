@@ -7,13 +7,13 @@ import Logo3 from "../../assets/Rectangle 29.png";
 import Logo4 from "../../assets/Rectangle 31.png";
 import Logo5 from "../../assets/Rectangle 34.png";
 
-const images = [Logo2, Logo2, Logo2, Logo2, Logo2];
+const imagesStatic = [Logo2, Logo2, Logo2, Logo2, Logo2];
 
-const Products = ({ title, id }) => {
+const Products = ({ title, id, images }) => {
   return (
     <section className={styles.root} id={id}>
       <h1>{title}</h1>
-      <Slider images={images} />
+      <Slider images={images ? images : imagesStatic} />
     </section>
   );
 };

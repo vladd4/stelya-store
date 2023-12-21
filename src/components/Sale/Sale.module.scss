@@ -6,6 +6,7 @@
     width: 100%;
     background-color: $milk;
     position: relative;
+    padding-bottom: 5%;
     .wrapper {
         width: 80%;
         display: grid;
@@ -156,7 +157,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 50px;
-            margin-bottom: 10%;
+            margin-bottom: 5%;
             padding: 1% 0%;
             width: 20%;
             cursor: pointer;
