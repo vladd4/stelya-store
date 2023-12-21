@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useResize = (setSlides) => {
+const useResize = (setSlides, setMobile) => {
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
@@ -11,6 +11,7 @@ const useResize = (setSlides) => {
           setSlides(3);
         } else if (windowWidth <= 900) {
           setSlides(4);
+          setMobile(true);
         } else {
           setSlides(5);
         }

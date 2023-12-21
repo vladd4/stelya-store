@@ -7,11 +7,12 @@ import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 const Slider = ({ images }) => {
   const [slides, setSlides] = useState(5);
-  useResize(setSlides);
+  const [mobile, setMobile] = useState(false);
+  useResize(setSlides, setMobile);
   return (
     <Splide
       options={{
-        height: 130,
+        height: mobile ? 80 : 130,
         type: "loop",
         focus: "center",
         drag: true,
