@@ -32,8 +32,9 @@
                     background-color: transparent;
                     border: 1px solid $white;
                     color: $white;
-                    font-size: 12px;
+                    font-size: 15px;
                     padding: 2%;
+                    font-family: 'Montserrat';
                     outline: none;
                     option {
                         background-color: $black;
@@ -125,7 +126,7 @@
 }
 @media screen and (max-width: 600px) {
     .root {
-        padding-bottom: 10% !important;
+        // padding-bottom: 10% !important;
         .wrapper {
             h1 {
                 font-size: 20px !important;
@@ -142,6 +143,8 @@
                 }
                 .image_block {
                     width: 100% !important;
+                    position: relative !important;
+                    top: 0% !important;
                      p, button {
                         font-size: 12px !important;
                      }
