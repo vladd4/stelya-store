@@ -96,11 +96,18 @@ const Services = () => {
             })}
           </div>
           <div className={styles.mobile_links_block}>
-            <select>
-              {service_links.map((link) => {
+            <select
+              value={product.heading}
+              onChange={(e) => handleCLick(e.target.value)}
+            >
+              {service_links.map((link, index) => {
                 return (
-                  <option key={link.title} className={styles.option}>
-                    <b>{link.number}</b> &nbsp;{link.title}
+                  <option
+                    value={link.title}
+                    key={index}
+                    className={styles.option}
+                  >
+                    {link.number} &nbsp;{link.title}
                   </option>
                 );
               })}
