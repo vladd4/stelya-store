@@ -103,6 +103,7 @@
                     padding: 3% 2%;
                     margin-bottom: 4%;
                     outline: none;
+                    -webkit-appearance: none !important;
                     &::placeholder {
                         font-size: calc(#{$size}/1.5);
                         color: #1E1E1E80;
@@ -189,11 +190,14 @@
     }
 }
 @media screen and (max-width: 500px) {
+    .root {
+        width: 95% !important;
+    }
     .empty_block {
         display: none !important;
     }
     .info_block {
-        transform: translateY(-15%) !important;
+        transform: translateY(30%) !important;
         left: 0% !important;
         .contacts {
             place-items: center !important;
@@ -203,7 +207,7 @@
         }
     }
     .form_block {
-        transform: translateY(-110%) !important;
+        transform: translateY(-80%) !important;
         left: 0% !important;
         h1 {
             display: block !important;
