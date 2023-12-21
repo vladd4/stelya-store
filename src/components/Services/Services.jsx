@@ -3,6 +3,8 @@ import styles from "./Services.module.scss";
 import Arrow from "../../assets/arrowWhite.png";
 import Image from "../../assets/Rectangle 22.png";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setHeading } from "../../redux/slices/productSlice";
 
 const service_links = [
   {
@@ -64,9 +66,14 @@ const service_links = [
 ];
 
 const Services = () => {
+  const product = useSelector((state) => state.product);
   const toTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+  };
+  const dispatch = useDispatch();
+  const handleCLick = (title) => {
+    dispatch(setHeading(title));
   };
   return (
     <section className={styles.root} id="offers">
@@ -76,14 +83,15 @@ const Services = () => {
           <div className={styles.links_block}>
             {service_links.map((link) => {
               return (
-                <a
+                <p
                   key={link.title}
+                  onClick={() => handleCLick(link.title)}
                   className={
-                    link.title === "Матова стеля" ? styles.current : ""
+                    link.title === product.heading ? styles.current : ""
                   }
                 >
                   <b>{link.number}</b> &nbsp;{link.title}
-                </a>
+                </p>
               );
             })}
           </div>

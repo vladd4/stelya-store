@@ -3,11 +3,12 @@ import styles from "./ProductPage.module.scss";
 import Image from "../../assets/image.png";
 import { useEffect } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setClicked } from "../../redux/slices/headerSlice";
 
 const ProductInfo = () => {
   const dispatch = useDispatch();
+  const product = useSelector((state) => state.product);
   useEffect(() => {
     dispatch(setClicked(true));
 
@@ -20,7 +21,7 @@ const ProductInfo = () => {
       <article className={styles.wrapper}>
         <img alt="sdsd" src={Image} />
         <div className={styles.info}>
-          <h1>МАТОВІ СТЕЛІ</h1>
+          <h1>{product.heading}</h1>
           <p>
             Матові натяжні стелі виглядають як натуральні, з шпаклюванням
             ідеально рівної поверхні. Це дозволяє поєднувати їх з будь-яким
