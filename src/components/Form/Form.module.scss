@@ -103,7 +103,9 @@
                     padding: 3% 2%;
                     margin-bottom: 4%;
                     outline: none;
+                    border-radius: 0px !important;
                     -webkit-appearance: none !important;
+                    -webkit-border-radius: 0px;
                     &::placeholder {
                         font-size: calc(#{$size}/1.5);
                         color: #1E1E1E80;
