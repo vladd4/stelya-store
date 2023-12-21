@@ -20,10 +20,17 @@ export const fetchText = createAsyncThunk("sale/fetchText", async () => {
   return data.docs[0].data().saleText;
 });
 
+export const fetchTimer = createAsyncThunk("sale/fetchTimer", async () => {
+  const collectionRef = collection(db, "sale");
+  const data = await getDocs(collectionRef);
+  return data.docs[0].data().timerDate;
+});
+
 const initialState = {
   showSale: true,
   saleImage: null,
   saleText: null,
+  timerDate: null,
   status: "loading",
 };
 
@@ -67,6 +74,18 @@ export const saleSlice = createSlice({
       })
       .addCase(fetchText.rejected, (state) => {
         state.saleText = null;
+        state.status = "loading";
+      })
+      .addCase(fetchTimer.pending, (state) => {
+        state.timerDate = null;
+        state.status = "loading";
+      })
+      .addCase(fetchTimer.fulfilled, (state, action) => {
+        state.timerDate = action.payload;
+        state.status = "loaded";
+      })
+      .addCase(fetchTimer.rejected, (state) => {
+        state.timerDate = null;
         state.status = "loading";
       });
   },

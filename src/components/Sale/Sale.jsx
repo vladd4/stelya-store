@@ -14,6 +14,7 @@ import {
   fetchImage,
   fetchIsEmpty,
   fetchText,
+  fetchTimer,
 } from "../../redux/slices/saleSlice";
 
 const Sale = () => {
@@ -23,16 +24,15 @@ const Sale = () => {
     dispatch(fetchIsEmpty());
     dispatch(fetchImage());
     dispatch(fetchText());
+    dispatch(fetchTimer());
   }, []);
   return (
     <section className={styles.root} id="sale">
-      <Marquee direction="right" className={styles.line2}>
-        <div>
-          <img alt="Sale Amount" src={Line1} />
-          <img alt="Sale Amount" src={Line2} />
-          <img alt="Sale Amount" src={Line1} />
-          <img alt="Sale Amount" src={Line2} />
-        </div>
+      <Marquee direction="right" className={styles.line2} autoFill={true}>
+        <img alt="Sale Amount" src={Line1} />
+        <img alt="Sale Amount" src={Line2} />
+        <img alt="Sale Amount" src={Line1} />
+        <img alt="Sale Amount" src={Line2} />
       </Marquee>
       <article className={styles.wrapper}>
         <div className={styles.cards_block}>
@@ -66,7 +66,7 @@ const Sale = () => {
               style={{ backgroundImage: `url(${sale.saleImage})` }}
             ></div>
             <p>{sale.saleText}</p>
-            <Countdown date={Date.now() + 202500000} autoStart />
+            <Countdown date={String(sale.timerDate)} autoStart />
             <div className={styles.timer_div}>
               <p>Дні</p>
               <p>Години</p>
@@ -80,13 +80,11 @@ const Sale = () => {
           </>
         ) : null}
       </article>
-      <Marquee direction="left" className={styles.line3}>
-        <div>
-          <img alt="Sale Amount" src={Line1} />
-          <img alt="Sale Amount" src={Line2} />
-          <img alt="Sale Amount" src={Line1} />
-          <img alt="Sale Amount" src={Line2} />
-        </div>
+      <Marquee direction="left" className={styles.line3} autoFill={true}>
+        <img alt="Sale Amount" src={Line1} />
+        <img alt="Sale Amount" src={Line2} />
+        <img alt="Sale Amount" src={Line1} />
+        <img alt="Sale Amount" src={Line2} />
       </Marquee>
     </section>
   );

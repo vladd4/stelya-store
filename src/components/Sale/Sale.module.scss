@@ -174,49 +174,28 @@
     .line2 {
         background-color: $orange;
         padding: 1% 0%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: absolute;
         top: 0;
         width: 100%;
         height: 4%;
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        img {
+            width: 85%;
             height: 100%;
-            gap: 3%;
-            img {
-                width: 50%;
-                height: 100%;
-            }
         }
     }
     .line3 {
         background-color: $orange;
         padding: 1% 0%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: absolute;
         bottom: 0;
-        width: 100%;
         height: 4%;
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3%;
+        width: 100%;
+        img {
+            width: 85%;
             height: 100%;
-            img {
-                width: 50%;
-                height: 100%;
-            }
         }
     }
 }
-
 @media screen and (max-width: 900px) {
     .wrapper {
         .cards_block {
@@ -273,6 +252,11 @@
             p {
                 font-size: 14px !important;
             }
+        }
+    }
+    .line2, .line3 {
+        img {
+            width: 70% !important;
         }
     }   
 }
