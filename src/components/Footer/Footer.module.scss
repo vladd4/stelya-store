@@ -192,7 +192,7 @@
 }
 @media screen and (max-width: 600px) {
     .root {
-        padding: 5% 0% !important;
+        padding-top: 5% !important;
     }
     .header_block {
         flex-direction: column;
@@ -245,6 +245,6 @@
     }
     .copy {
         font-size: 11px !important;
-        padding-top: 4% !important;
+        padding-top: 2% !important;
     }
 }
