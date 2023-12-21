@@ -128,7 +128,7 @@
 }
 @media screen and (max-width: 600px) {
     .root {
-        // padding-bottom: 10% !important;
+        padding-bottom: 10% !important;
         .wrapper {
             h1 {
                 font-size: 20px !important;
@@ -147,7 +147,7 @@
                     width: 100% !important;
                     position: relative !important;
                     top: 0% !important;
-                     p, button {
+                     p, a {
                         font-size: 12px !important;
                      }
                      a {
