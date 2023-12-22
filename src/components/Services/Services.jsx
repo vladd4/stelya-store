@@ -80,7 +80,11 @@ const Services = () => {
       <article className={styles.wrapper}>
         <h1>НАШІ ПОСЛУГИ</h1>
         <article className={styles.info_block}>
-          <div className={styles.links_block}>
+          <div
+            className={styles.links_block}
+            data-aos="fade-right"
+            data-aos-duration="1500"
+          >
             {service_links.map((link) => {
               return (
                 <p
@@ -95,7 +99,11 @@ const Services = () => {
               );
             })}
           </div>
-          <div className={styles.mobile_links_block}>
+          <div
+            className={styles.mobile_links_block}
+            data-aos="fade-right"
+            data-aos-duration="1500"
+          >
             <select
               value={product.heading}
               onChange={(e) => handleCLick(e.target.value)}

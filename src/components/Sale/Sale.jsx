@@ -36,7 +36,11 @@ const Sale = () => {
       </Marquee>
       <article className={styles.wrapper}>
         <div className={styles.cards_block}>
-          <div className={styles.card_orange}>
+          <div
+            className={styles.card_orange}
+            data-aos="fade-right"
+            data-aos-duration="1500"
+          >
             <h3>“Дякуємо за вірність”</h3>
             <p>
               При повторному замовленні отримайте знижку 3% від вартості
@@ -47,7 +51,11 @@ const Sale = () => {
               Дізнатись більше
             </button>
           </div>
-          <div className={styles.card_black}>
+          <div
+            className={styles.card_black}
+            data-aos="fade-left"
+            data-aos-duration="1500"
+          >
             <h3>“Швидке замовлення”</h3>
             <p>
               Укладіть угоду в день виміру та отримайте знижку 3% від вартості
@@ -62,18 +70,30 @@ const Sale = () => {
         {sale && sale.showSale ? (
           <>
             <div
+              data-aos="fade-up"
+              data-aos-duration="1500"
               className={styles.sale_img}
               style={{ backgroundImage: `url(${sale.saleImage})` }}
             ></div>
-            <p>{sale.saleText}</p>
+            <p data-aos="fade-up" data-aos-duration="1500">
+              {sale.saleText}
+            </p>
             <Countdown date={String(sale.timerDate)} autoStart />
-            <div className={styles.timer_div}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              className={styles.timer_div}
+            >
               <p>Дні</p>
               <p>Години</p>
               <p>Хвилини</p>
               <p>Секунди</p>
             </div>
-            <button onClick={() => dispatch(setClicked(true))}>
+            <button
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              onClick={() => dispatch(setClicked(true))}
+            >
               <img alt="Arrow" width={40} height={40} src={ArrowBlack} />
               Дізнатись більше
             </button>

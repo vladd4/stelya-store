@@ -14,6 +14,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchPartners } from "../redux/slices/partnerSlice";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 window.onload = function () {
   document.body.classList.remove("loaded");
   document.body.classList.add("loaded_hiding");
@@ -28,6 +31,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPartners());
+    AOS.init();
   }, []);
   return (
     <div className="App">

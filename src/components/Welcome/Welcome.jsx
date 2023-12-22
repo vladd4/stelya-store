@@ -12,7 +12,11 @@ const Welcome = () => {
   };
   return (
     <section className={styles.root} id="welcome">
-      <article className={styles.wrapper}>
+      <article
+        className={styles.wrapper}
+        data-aos="fade-down"
+        data-aos-duration="1500"
+      >
         <img
           className={styles.logo}
           alt="StyleaStore"

@@ -10,12 +10,34 @@ const CalcBlock = () => {
           необхідну інформацію та підтримку з вибором оптимальних рішень для
           вашої стелі.
         </p>
-        <button className={styles.info_button}>
+        <button
+          className={styles.info_button}
+          data-aos="fade-right"
+          data-aos-duration="1500"
+        >
           Понеділок - Субота; 9:00 - 20:00
         </button>
-        <button className={styles.tg_btn}>Telegram</button>
-        <button className={styles.viber_btn}>Viber</button>
-        <button className={styles.tel_btn}>Мобільний телефон</button>
+        <button
+          data-aos="fade-left"
+          data-aos-duration="1500"
+          className={styles.tg_btn}
+        >
+          Telegram
+        </button>
+        <button
+          data-aos="fade-right"
+          data-aos-duration="1500"
+          className={styles.viber_btn}
+        >
+          Viber
+        </button>
+        <button
+          data-aos="fade-left"
+          data-aos-duration="1500"
+          className={styles.tel_btn}
+        >
+          Мобільний телефон
+        </button>
       </article>
     </section>
   );

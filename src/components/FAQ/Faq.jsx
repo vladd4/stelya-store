@@ -11,7 +11,11 @@ import Open from "../../assets/open.png";
 const Faq = () => {
   return (
     <section className={styles.root} id="consultation">
-      <article className={styles.wrapper}>
+      <article
+        className={styles.wrapper}
+        data-aos="fade-right"
+        data-aos-duration="1500"
+      >
         <h1>ПЕРЕВАГИ НАТЯЖНИХ СТЕЛЬ </h1>
         <Accordion className={styles.accordion}>
           <AccordionItem>

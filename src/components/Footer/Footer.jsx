@@ -13,7 +13,11 @@ const Footer = () => {
   return (
     <footer className={styles.root} id="form">
       <article className={styles.wrapper}>
-        <div className={styles.header_block}>
+        <div
+          className={styles.header_block}
+          data-aos="fade-right"
+          data-aos-duration="1500"
+        >
           <h1>
             ЗАЦІКАВИЛА ПРОПОЗИЦІЯ? ЗАПОВНІТЬ <b>ЗАЯВКУ</b> ТА ОТРИМАЙТЕ ШВИДКУ
             КОНСУЛЬТАЦІЮ.
@@ -23,7 +27,11 @@ const Footer = () => {
             Дізнатися більше
           </button>
         </div>
-        <div className={styles.info_block}>
+        <div
+          className={styles.info_block}
+          data-aos="fade-left"
+          data-aos-duration="1500"
+        >
           <div className={styles.contacts}>
             <h5>Контакти</h5>
             <p>+38(095) 777-26-97</p>
@@ -64,7 +72,7 @@ const Footer = () => {
           ></iframe>
         </div>
       </article>
-      <p className={styles.copy}>
+      <p className={styles.copy} data-aos="fade-right" data-aos-duration="1500">
         Copyright © Stelya-Store. All rights Reserved.
       </p>
     </footer>
