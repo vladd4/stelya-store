@@ -64,7 +64,7 @@ const Footer = () => {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.827936151207!2d30.658331676402145!3d50.42567737158746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c521ce1bb7af%3A0x9877fd6781bdfaf8!2z0LLRg9C70LjRhtGPINCu0YDRltGPINCb0LjRgtCy0LjQvdGB0YzQutC-0LPQviwgMzMsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1702984704854!5m2!1suk!2sua"
             width="600"
             height="350"
-            name="map"
+            name="iframe_map"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -72,7 +72,7 @@ const Footer = () => {
           ></iframe>
         </div>
       </article>
-      <p className={styles.copy} data-aos="fade-right" data-aos-duration="1500">
+      <p className={styles.copy}>
         Copyright © Stelya-Store. All rights Reserved.
       </p>
     </footer>
