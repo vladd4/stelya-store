@@ -5,6 +5,7 @@
     display: grid;
     place-items: center;
     background-color: $milk;
+    overflow-x: hidden;
     padding: 5% 0%;
     .wrapper {
         width: 80%;
