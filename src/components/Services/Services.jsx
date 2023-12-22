@@ -110,13 +110,17 @@ const Services = () => {
             >
               {service_links.map((link, index) => {
                 return (
-                  <option
-                    value={link.title}
-                    key={index}
-                    className={styles.option}
-                  >
-                    {link.number} &nbsp;{link.title}
-                  </option>
+                  <>
+                    <option
+                      value={link.title}
+                      key={index}
+                      name={link.title}
+                      className={styles.option}
+                    >
+                      {link.number} &nbsp;{link.title}
+                    </option>
+                    <label for={link.title}></label>
+                  </>
                 );
               })}
             </select>
