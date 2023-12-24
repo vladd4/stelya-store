@@ -11,7 +11,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const Footer = () => {
   const dispatch = useDispatch();
   return (
-    <footer className={styles.root} id="form">
+    <footer className={styles.root} id="contacts">
       <article className={styles.wrapper}>
         <div
           className={styles.header_block}
@@ -24,7 +24,7 @@ const Footer = () => {
           </h1>
           <button onClick={() => dispatch(setClicked(true))}>
             <img alt="Arrow Up" src={Arrow} width={43} height={43} />
-            Дізнатися більше
+            Дізнатись більше
           </button>
         </div>
         <div

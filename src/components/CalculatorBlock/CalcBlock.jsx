@@ -2,7 +2,7 @@ import styles from "./CalcBlock.module.scss";
 
 const CalcBlock = () => {
   return (
-    <section className={styles.root} id="contacts">
+    <section className={styles.root} id="form">
       <article className={styles.wrapper}>
         <h1>РОЗРАХУЙТЕ ВАРТІСТЬ ТА ТЕРМІНИ РЕМОНТУ ПРИМІЩЕННЯ</h1>
         <p>
@@ -10,13 +10,6 @@ const CalcBlock = () => {
           необхідну інформацію та підтримку з вибором оптимальних рішень для
           вашої стелі.
         </p>
-        <button
-          className={styles.info_button}
-          data-aos="fade-right"
-          data-aos-duration="1500"
-        >
-          Понеділок - Субота; 9:00 - 20:00
-        </button>
         <button
           data-aos="fade-left"
           data-aos-duration="1500"
@@ -36,7 +29,7 @@ const CalcBlock = () => {
           data-aos-duration="1500"
           className={styles.tel_btn}
         >
-          Мобільний телефон
+          Зателефонувати
         </button>
       </article>
     </section>

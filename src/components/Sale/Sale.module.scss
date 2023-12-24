@@ -133,21 +133,6 @@
             margin-top: 1%;
             text-align: center;
         }
-        .timer_div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50%;
-            gap: 5%;
-            margin-left: 1.5%;
-            margin-bottom: 2%;
-            p {
-                font-size: calc(#{$size}/1.25);
-                font-weight: 600;
-                text-align: center;
-                width: fit-content;
-            }
-        }
         button {
             background-color: $orange;
             color: $black;
@@ -159,6 +144,7 @@
             justify-content: center;
             border-radius: 50px;
             margin-bottom: 5%;
+            margin-top: 3%;
             padding: 1% 0%;
             width: 20%;
             cursor: pointer;
@@ -248,11 +234,6 @@
         span {
             margin-top: 3% !important;
             font-size: 35px !important;
-        }
-        .timer_div {
-            p {
-                font-size: 14px !important;
-            }
         }
     }
     .line2, .line3 {

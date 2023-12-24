@@ -41,9 +41,9 @@ const Sale = () => {
             data-aos="fade-right"
             data-aos-duration="1500"
           >
-            <h3>“Дякуємо за вірність”</h3>
+            <h3>Дякуємо за вірність</h3>
             <p>
-              При повторному замовленні отримайте знижку 3% від вартості
+              При повторному замовленні отримайте знижку 5% від вартості
               послуги.
             </p>
             <button onClick={() => dispatch(setClicked(true))}>
@@ -56,9 +56,9 @@ const Sale = () => {
             data-aos="fade-left"
             data-aos-duration="1500"
           >
-            <h3>“Швидке замовлення”</h3>
+            <h3>Швидке замовлення</h3>
             <p>
-              Укладіть угоду в день виміру та отримайте знижку 3% від вартості
+              Укладіть угоду в день виміру та отримайте знижку 10% від вартості
               послуги.
             </p>
             <button onClick={() => dispatch(setClicked(true))}>
@@ -79,16 +79,6 @@ const Sale = () => {
               {sale.saleText}
             </p>
             <Countdown date={String(sale.timerDate)} autoStart />
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              className={styles.timer_div}
-            >
-              <p>Дні</p>
-              <p>Години</p>
-              <p>Хвилини</p>
-              <p>Секунди</p>
-            </div>
             <button
               data-aos="fade-up"
               data-aos-duration="1500"

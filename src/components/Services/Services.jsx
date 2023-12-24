@@ -133,7 +133,7 @@ const Services = () => {
             </p>
             <Link to="/products" onClick={toTop}>
               <img alt="Arrow" src={Arrow} width={30} height={30} />
-              Дізнатися більше
+              Дізнатись більше
             </Link>
             <img alt="Stelya" src={Image} width={660} height={515} />
           </div>

@@ -7,7 +7,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const links = [
   {
-    title: "Акція",
+    title: "Акції/пропозиції",
     href: "#sale",
   },
   {

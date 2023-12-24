@@ -53,7 +53,7 @@ const Form = () => {
             <h1>ЗАПОВНІТЬ ФОРМУ</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
-                placeholder="Ім'я"
+                placeholder="Ім'я*"
                 name="name"
                 required
                 {...register("name")}
@@ -64,7 +64,7 @@ const Form = () => {
                 {...register("mail")}
               />
               <input
-                placeholder="Номер телефону"
+                placeholder="Номер телефону*"
                 name="phone"
                 required
                 {...register("phone")}
