@@ -1,6 +1,8 @@
 import styles from "./Footer.module.scss";
 
-import Social from "../../assets/social.png";
+import Inst from "../../assets/instagram-icon.png";
+import Face from "../../assets/facebook-icon.png";
+import Teleg from "../../assets/telegram-icon.png";
 import Arrow from "../../assets/arrowUp.png";
 import Logo from "../../assets/logo.png";
 import { useDispatch } from "react-redux";
@@ -24,7 +26,7 @@ const Footer = () => {
           </h1>
           <button onClick={() => dispatch(setClicked(true))}>
             <img alt="Arrow Up" src={Arrow} width={43} height={43} />
-            Дізнатись більше
+            Отримати консультацію
           </button>
         </div>
         <div
@@ -41,13 +43,13 @@ const Footer = () => {
             <p>вул. Юрія Литвинського 33 м.Київ 02000</p>
             <div className={styles.social_icons}>
               <a href="http://some.com" target="_blank" rel="noreferrer">
-                <img alt="Social" src={Social} width={40} height={40} />
+                <img alt="Social" src={Inst} width={40} height={40} />
               </a>
               <a href="http://some.com" target="_blank" rel="noreferrer">
-                <img alt="Social" src={Social} width={40} height={40} />
+                <img alt="Social" src={Face} width={40} height={40} />
               </a>
               <a href="http://some.com" target="_blank" rel="noreferrer">
-                <img alt="Social" src={Social} width={40} height={40} />
+                <img alt="Social" src={Teleg} width={40} height={40} />
               </a>
             </div>
           </div>

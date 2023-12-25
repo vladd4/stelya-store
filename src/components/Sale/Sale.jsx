@@ -48,7 +48,7 @@ const Sale = () => {
             </p>
             <button onClick={() => dispatch(setClicked(true))}>
               <img alt="Arrow" width={40} height={40} src={ArrowBlack} />
-              Дізнатись більше
+              Отримати знижку
             </button>
           </div>
           <div
@@ -63,7 +63,7 @@ const Sale = () => {
             </p>
             <button onClick={() => dispatch(setClicked(true))}>
               <img alt="Arrow" width={40} height={40} src={ArrowWhite} />
-              Дізнатись більше
+              Отримати знижку
             </button>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Sale = () => {
               style={{ backgroundImage: `url(${sale.saleImage})` }}
             ></div>
             <p data-aos="fade-up" data-aos-duration="1500">
-              {sale.saleText}
+              {sale.saleText?.split(".").join("\n")}
             </p>
             <Countdown date={String(sale.timerDate)} autoStart />
             <button
@@ -85,7 +85,7 @@ const Sale = () => {
               onClick={() => dispatch(setClicked(true))}
             >
               <img alt="Arrow" width={40} height={40} src={ArrowBlack} />
-              Дізнатись більше
+              Отримати консультацію
             </button>
           </>
         ) : null}
