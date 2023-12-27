@@ -8,6 +8,7 @@
     padding-top: 2%;
     padding-bottom: 5%;
     color: $white;
+
     .wrapper {
         width: 80%;
         display: grid;
@@ -111,6 +112,16 @@
         }
     }
 }
+.slider {
+    display: none;
+    width: 390px !important;
+    p {
+        text-align: center !important;
+        font-size: 13px;
+        align-items: center !important;
+        margin-top: 5%;
+    }
+}
 @media screen and (max-width: 900px) {
     .root {
         .links_block {
@@ -158,5 +169,24 @@
                 }
             }
         }
+    }
+    .slider {
+        display: block !important;
+        width: 390px !important;
+    }
+}
+@media screen and (max-width: 500px) {
+    .slider {
+        width: 350px !important;
+    }
+}
+@media screen and (max-width: 440px) {
+    .slider {
+        width: 300px !important;
+    }
+}
+@media screen and (max-width: 380px) {
+    .slider {
+        width: 280px !important;
     }
 }

@@ -5,6 +5,7 @@ import Image from "../../assets/Rectangle 22.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setHeading } from "../../redux/slices/productSlice";
+import Slider from "./LinkSlider";
 
 const service_links = [
   {
@@ -76,70 +77,73 @@ const Services = () => {
     dispatch(setHeading(title));
   };
   return (
-    <section className={styles.root} id="offers">
-      <article className={styles.wrapper}>
-        <h1>НАШІ ПОСЛУГИ</h1>
-        <article className={styles.info_block}>
-          <div
-            className={styles.links_block}
-            data-aos="fade-right"
-            data-aos-duration="1500"
-          >
-            {service_links.map((link) => {
-              return (
-                <p
-                  key={link.title}
-                  onClick={() => handleCLick(link.title)}
-                  className={
-                    link.title === product.heading ? styles.current : ""
-                  }
-                >
-                  <b>{link.number}</b> &nbsp;{link.title}
-                </p>
-              );
-            })}
-          </div>
-          <div
-            className={styles.mobile_links_block}
-            data-aos="fade-right"
-            data-aos-duration="1500"
-          >
-            <select
-              value={product.heading}
-              onChange={(e) => handleCLick(e.target.value)}
+    <>
+      <section className={styles.root} id="offers">
+        <article className={styles.wrapper}>
+          <h1>НАШІ ПОСЛУГИ</h1>
+          <article className={styles.info_block}>
+            <div
+              className={styles.links_block}
+              data-aos="fade-right"
+              data-aos-duration="1500"
             >
-              {service_links.map((link, index) => {
+              {service_links.map((link) => {
                 return (
-                  <>
-                    <option
-                      value={link.title}
-                      key={index}
-                      name={link.title}
-                      className={styles.option}
-                    >
-                      {link.number} &nbsp;{link.title}
-                    </option>
-                    <label for={link.title}></label>
-                  </>
+                  <p
+                    key={link.title}
+                    onClick={() => handleCLick(link.title)}
+                    className={
+                      link.title === product.heading ? styles.current : ""
+                    }
+                  >
+                    <b>{link.number}</b> &nbsp;{link.title}
+                  </p>
                 );
               })}
-            </select>
-          </div>
-          <div className={styles.image_block}>
-            <p>
-              Матові натяжні стелі виглядають як натуральні, з шпаклюванням
-              ідеально рівної поверхні. Це дозволяє поєднувати їх з будь-яким
-              інтер'єром, гарно виглядають як в офісі, так і вдома.
-            </p>
-            <Link to="/products" onClick={toTop}>
-              <img alt="Arrow" src={Arrow} width={30} height={30} />
-              Дізнатись більше
-            </Link>
-            <img alt="Stelya" src={Image} width={660} height={515} />
-          </div>
+            </div>
+            <Slider links={service_links} />
+            {/* <div
+              className={styles.mobile_links_block}
+              data-aos="fade-right"
+              data-aos-duration="1500"
+            >
+              <select
+                value={product.heading}
+                onChange={(e) => handleCLick(e.target.value)}
+              >
+                {service_links.map((link, index) => {
+                  return (
+                    <>
+                      <option
+                        value={link.title}
+                        key={index}
+                        name={link.title}
+                        className={styles.option}
+                      >
+                        {link.number} &nbsp;{link.title}
+                      </option>
+                      <label for={link.title}></label>
+                    </>
+                  );
+                })}
+              </select>
+            </div> */}
+            <div className={styles.image_block}>
+              <p>
+                Матові натяжні стелі виглядають як натуральні, з шпаклюванням
+                ідеально рівної поверхні. Це дозволяє поєднувати їх з будь-яким
+                інтер'єром, гарно виглядають як в офісі, так і вдома.
+              </p>
+              <Link to="/products" onClick={toTop}>
+                <img alt="Arrow" src={Arrow} width={30} height={30} />
+                Дізнатись більше
+              </Link>
+              <img alt="Stelya" src={Image} width={660} height={515} />
+            </div>
+          </article>
         </article>
-      </article>
-    </section>
+      </section>
+    </>
   );
 };
 export default Services;
