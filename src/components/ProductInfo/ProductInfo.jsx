@@ -1,12 +1,14 @@
 import styles from "./ProductPage.module.scss";
 
 import Image from "../../assets/image.png";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setClicked } from "../../redux/slices/headerSlice";
+import Context from "../../hooks/useContext";
 
 const ProductInfo = () => {
+  const t = useContext(Context);
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product);
   useEffect(() => {
@@ -19,23 +21,10 @@ const ProductInfo = () => {
   return (
     <section className={styles.root}>
       <article className={styles.wrapper}>
-        <img alt="sdsd" src={Image} />
+        <img alt="sdsd" src={product.images} />
         <div className={styles.info}>
-          <h1>{product.heading}</h1>
-          <p>
-            Матові натяжні стелі виглядають як натуральні, з шпаклюванням
-            ідеально рівної поверхні. Це дозволяє поєднувати їх з будь-яким
-            інтер'єром, гарно виглядають як в офісі, так і вдома. Основна
-            перевага матових стель – візуальна натуральність. З відстані 1 м
-            професіонал важко відрізнить їх від бетонного штукатуреного
-            перекриття. Декоративна поверхня після монтажу виходить ідеально
-            гладкою, тому добре приховує дефекти ЖБІ-конструкцій. Завдяки
-            швидкій системі встановлення, не потрібно вивозити меблі або
-            вивільняти кімнату на тиждень – весь процес монтажу займає кілька
-            годин. Щоб замовити натяжну стелю з матовою поверхнею, подайте
-            заявку, і ми проконсультуємо вас. Ми надаємо великий вибір кольорів,
-            професійно монтуємо, маємо вигідні ціни та акції.
-          </p>
+          <h1>{t(product.heading)}</h1>
+          <p>{t(product.text)}</p>
         </div>
       </article>
     </section>

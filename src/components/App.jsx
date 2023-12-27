@@ -17,6 +17,9 @@ import { fetchPartners } from "../redux/slices/partnerSlice";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import { useTranslation } from "react-i18next";
+import Context from "../hooks/useContext";
+
 window.onload = function () {
   document.body.classList.remove("loaded");
   document.body.classList.add("loaded_hiding");
@@ -27,25 +30,32 @@ window.onload = function () {
 };
 
 function App() {
+  const { t, i18n } = useTranslation();
   const partners = useSelector((state) => state.partner);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPartners());
     AOS.init();
-  }, []);
+  }, [dispatch]);
   return (
-    <div className="App">
-      <Loader />
-      <Alert />
-      <Form />
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductInfo />} />
-      </Routes>
-      <Products title="НАШІ ПАРТНЕРИ" id="partners" images={partners.images} />
-      <Footer />
-    </div>
+    <Context.Provider value={t}>
+      <div className="App">
+        <Loader />
+        <Alert />
+        <Form />
+        <Header t={t} i18n={i18n} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductInfo />} />
+        </Routes>
+        <Products
+          title="НАШІ ПАРТНЕРИ"
+          id="partners"
+          images={partners.images}
+        />
+        <Footer />
+      </div>
+    </Context.Provider>
   );
 }
 
