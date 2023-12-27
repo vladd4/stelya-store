@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Image from "../../assets/service-illustration/2/2.jpg";
+import Image from "../../assets/service-illustration/1/1.jpg";
 
 const initialState = {
-  heading: "stelya_2_h",
-  text: "stelya_2_p",
+  heading: "stelya_1_h",
+  text: "stelya_1_p",
   images: Image,
 };
 

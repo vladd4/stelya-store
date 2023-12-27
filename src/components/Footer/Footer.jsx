@@ -21,8 +21,8 @@ const Footer = () => {
           data-aos-duration="1500"
         >
           <h1>
-            ЗАЦІКАВИЛА ПРОПОЗИЦІЯ? ЗАПОВНІТЬ <b>ЗАЯВКУ</b> ТА ОТРИМАЙТЕ ШВИДКУ
-            КОНСУЛЬТАЦІЮ.
+            ЗАПОВНІТЬ <b>ЗАЯВКУ</b>, ЩОБ ОТРИМАТИ КОНСУЛЬТАЦІЮ ВІД НАШИХ
+            ЕКСПЕРТІВ.
           </h1>
           <button onClick={() => dispatch(setClicked(true))}>
             <img alt="Arrow Up" src={Arrow} width={43} height={43} />
