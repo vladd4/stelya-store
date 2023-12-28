@@ -37,6 +37,11 @@
         }
     }
 }
+
+.slider {
+    width: 40%;
+}
+
 @media screen and (max-width: 600px) {
     .root {
         padding-bottom: 5% !important;
@@ -57,5 +62,9 @@
             width: 100% !important;
             margin-top: 3% !important;
         }       
+    }
+    .slider {
+        width: 100% !important;
+        margin-top: 3% !important;
     }
 }

@@ -24,6 +24,6 @@ export const hideShowBodyProduct = (overflow, opacity, events) => {
   document.body.style.overflowY = overflow;
   document.querySelector("#partners").style.opacity = opacity;
   document.querySelector("#partners").style.pointerEvents = events;
-  document.querySelector("#form").style.opacity = opacity;
-  document.querySelector("#form").style.pointerEvents = events;
+  document.querySelector("#contacts").style.opacity = opacity;
+  document.querySelector("#contacts").style.pointerEvents = events;
 };

@@ -1,11 +1,11 @@
 import styles from "./ProductPage.module.scss";
 
-import Image from "../../assets/image.png";
 import { useContext, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setClicked } from "../../redux/slices/headerSlice";
 import Context from "../../hooks/useContext";
+import ProductSlider from "./ProductSlider";
 
 const ProductInfo = () => {
   const t = useContext(Context);
@@ -21,7 +21,7 @@ const ProductInfo = () => {
   return (
     <section className={styles.root}>
       <article className={styles.wrapper}>
-        <img alt="sdsd" src={product.images} />
+        <ProductSlider images={product.images} />
         <div className={styles.info}>
           <h1>{t(product.heading)}</h1>
           <p>{t(product.text)}</p>
