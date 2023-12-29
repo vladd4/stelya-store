@@ -3,10 +3,13 @@ import styles from "./Alert.module.scss";
 import Close from "../../assets/close.png";
 import { useDispatch, useSelector } from "react-redux";
 import { setClickedAlert } from "../../redux/slices/formSlice";
+import { useContext } from "react";
+import Context from "../../hooks/useContext";
 
 const Alert = () => {
   const form = useSelector((state) => state.form);
   const dispatch = useDispatch();
+  const t = useContext(Context);
 
   if (form.isClickedAlert) {
     return (
@@ -19,8 +22,8 @@ const Alert = () => {
           height={25}
           onClick={() => dispatch(setClickedAlert(false))}
         />
-        <h1>ДЯКУЄМО ЩО ОБИРАЄТЕ НАС!</h1>
-        <p>Наш менеджер зв'яжеться з вами протягом 30 хвилин.</p>
+        <h1>{t("alert_h")}</h1>
+        <p>{t("alert_p")}</p>
       </article>
     );
   } else return null;

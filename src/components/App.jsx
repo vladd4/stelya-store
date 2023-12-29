@@ -48,11 +48,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductInfo />} />
         </Routes>
-        <Products
-          title="НАШІ ПАРТНЕРИ"
-          id="partners"
-          images={partners.images}
-        />
+        <Products title="partners_h" id="partners" images={partners.images} />
         <Footer />
       </div>
     </Context.Provider>

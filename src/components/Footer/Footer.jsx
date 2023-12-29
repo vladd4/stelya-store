@@ -9,9 +9,12 @@ import { useDispatch } from "react-redux";
 import { setClicked } from "../../redux/slices/formSlice";
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useContext } from "react";
+import Context from "../../hooks/useContext";
 
 const Footer = () => {
   const dispatch = useDispatch();
+  const t = useContext(Context);
   return (
     <footer className={styles.root} id="contacts">
       <article className={styles.wrapper}>
@@ -21,12 +24,12 @@ const Footer = () => {
           data-aos-duration="1500"
         >
           <h1>
-            ЗАПОВНІТЬ <b>ЗАЯВКУ</b>, ЩОБ ОТРИМАТИ КОНСУЛЬТАЦІЮ ВІД НАШИХ
-            ЕКСПЕРТІВ.
+            {t("offer_h")} <b>{t("offer_h_b")}</b>
+            {t("offer_h2")}
           </h1>
           <button onClick={() => dispatch(setClicked(true))}>
             <img alt="Arrow Up" src={Arrow} width={43} height={43} />
-            Отримати консультацію
+            {t("conslut_btn")}
           </button>
         </div>
         <div
@@ -35,12 +38,18 @@ const Footer = () => {
           data-aos-duration="1500"
         >
           <div className={styles.contacts}>
-            <h5>Контакти</h5>
-            <p>+38(095) 777-26-97</p>
-            <p>+38(095) 777-26-97</p>
-            <p>+38(095) 777-26-97</p>
-            <p>example@gmail.com</p>
-            <p>вул. Юрія Литвинського 33 м.Київ 02000</p>
+            <h5>{t("contact_h")}</h5>
+            <a href="tel:+380957772697">+38(095) 777-26-97</a>
+            <a href="tel:+380967772697">+38(096) 777-26-97</a>
+            <a href="tel:+380737772697">+38(073) 777-26-97</a>
+            <a href="mailto:">example@gmail.com</a>
+            <a
+              href="https://maps.app.goo.gl/4d7DExM4ooRvLDwx9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t("address")}
+            </a>
             <div className={styles.social_icons}>
               <a href="http://some.com" target="_blank" rel="noreferrer">
                 <img alt="Social" src={Inst} width={40} height={40} />
@@ -56,10 +65,12 @@ const Footer = () => {
           <div className={styles.logo_block}>
             <img alt="StelyaStore" src={Logo} width={233} height={239} />
             <nav>
-              <AnchorLink href="#offers">Послуги</AnchorLink>
-              <AnchorLink href="#workingstages">Етапи роботи</AnchorLink>
-              <AnchorLink href="#partners">Партнери</AnchorLink>
-              <AnchorLink href="#consultation">Консультація</AnchorLink>
+              <AnchorLink href="#offers">{t("burg_link_3")}</AnchorLink>
+              <AnchorLink href="#workingstages">{t("burg_link_5")}</AnchorLink>
+              <AnchorLink href="#partners">{t("footer_part")}</AnchorLink>
+              <AnchorLink href="#consultation">
+                {t("footer_consalt")}
+              </AnchorLink>
             </nav>
           </div>
           <iframe
@@ -67,6 +78,7 @@ const Footer = () => {
             width="600"
             height="350"
             name="iframe_map"
+            title="iframe_map"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

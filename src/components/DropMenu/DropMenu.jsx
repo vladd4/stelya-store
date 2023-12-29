@@ -2,50 +2,15 @@ import styles from "./DropMenu.module.scss";
 
 import Logo from "../../assets/logo.png";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import Context from "../../hooks/useContext";
 
-const links = [
-  {
-    title: "Акції/пропозиції",
-    href: "#sale",
-  },
-  {
-    title: "Головна",
-    href: "#welcome",
-  },
-  {
-    title: "Послуги",
-    href: "#offers",
-  },
-  {
-    title: "Продукція",
-    href: "#products",
-  },
-  {
-    title: "Етапи роботи",
-    href: "#workingstages",
-  },
-  {
-    title: "Консультація",
-    href: "#consultation",
-  },
-  {
-    title: "Наші партнери",
-    href: "#partners",
-  },
-  {
-    title: "Форма зв'язку",
-    href: "#form",
-  },
-  {
-    title: "Контакти",
-    href: "#contacts",
-  },
-];
+import { links } from "../../static_store/drop_links";
 
 const DropMenu = ({ setClicked, isClicked }) => {
   const componentRef = useRef(null);
+  const t = useContext(Context);
   useEffect(() => {
     const handleClickOutside = (event) => {
       const burgerIcon = document.querySelector("#burger-icon");
@@ -89,16 +54,16 @@ const DropMenu = ({ setClicked, isClicked }) => {
                   }
                 }}
               >
-                {link.title}
+                {t(link.title)}
               </AnchorLink>
             );
           })}
         </div>
         <div className={styles.contacts}>
-          <h4>Контакти</h4>
-          <a href="tel:">+38(095) 777-26-97</a>
-          <a href="tel:">+38(095) 777-26-97</a>
-          <a href="tel:">+38(095) 777-26-97</a>
+          <h4>{t("contact_h")}</h4>
+          <a href="tel:+380957772697">+38(095) 777-26-97</a>
+          <a href="tel:+380967772697">+38(096) 777-26-97</a>
+          <a href="tel:+380737772697">+38(073) 777-26-97</a>
         </div>
       </article>
     </article>

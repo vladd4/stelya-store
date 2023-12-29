@@ -1,15 +1,14 @@
+import { useContext } from "react";
 import styles from "./CalcBlock.module.scss";
+import Context from "../../hooks/useContext";
 
 const CalcBlock = () => {
+  const t = useContext(Context);
   return (
     <section className={styles.root} id="form">
       <article className={styles.wrapper}>
-        <h1>РОЗРАХУЙТЕ ВАРТІСТЬ ТА ТЕРМІНИ РЕМОНТУ ПРИМІЩЕННЯ</h1>
-        <p>
-          Виникли питання? Залишай свій контактний номер і ми допоможемо вам з
-          будь-якими питаннями, надамо необхідну інформацію та підтримку з
-          вибором оптимальних рішень для вашої стелі.
-        </p>
+        <h1>{t("calc_h")}</h1>
+        <p>{t("calc_p")}</p>
         <button
           data-aos="fade-left"
           data-aos-duration="1500"
@@ -29,7 +28,7 @@ const CalcBlock = () => {
           data-aos-duration="1500"
           className={styles.tel_btn}
         >
-          Зателефонувати
+          {t("calc_phone")}
         </button>
       </article>
     </section>

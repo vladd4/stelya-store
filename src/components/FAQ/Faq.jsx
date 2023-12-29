@@ -10,28 +10,7 @@ import Open from "../../assets/open.png";
 import { useContext } from "react";
 import Context from "../../hooks/useContext";
 
-const faq_info = [
-  {
-    title: "faq_1_h",
-    text: "faq_1_p",
-  },
-  {
-    title: "faq_2_h",
-    text: "faq_2_p",
-  },
-  {
-    title: "faq_3_h",
-    text: "faq_3_p",
-  },
-  {
-    title: "faq_4_h",
-    text: "faq_4_p",
-  },
-  {
-    title: "faq_5_h",
-    text: "faq_5_p",
-  },
-];
+import { faq_info } from "../../static_store/faq_info";
 
 const Faq = () => {
   const t = useContext(Context);
@@ -42,7 +21,7 @@ const Faq = () => {
         data-aos="fade-right"
         data-aos-duration="1500"
       >
-        <h1>ПЕРЕВАГИ НАТЯЖНИХ СТЕЛЬ</h1>
+        <h1>{t("faq_h")}</h1>
         <Accordion className={styles.accordion}>
           {faq_info.map((info) => {
             return (

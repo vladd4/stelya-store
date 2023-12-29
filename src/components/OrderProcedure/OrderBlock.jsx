@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import styles from "./OrderBlock.module.scss";
+import Context from "../../hooks/useContext";
 
 const OrderBlock = ({ icon, h, title, right, fade }) => {
+  const t = useContext(Context);
   return (
     <article
       data-aos={fade}
@@ -8,8 +11,8 @@ const OrderBlock = ({ icon, h, title, right, fade }) => {
       className={`${styles.root} ${right ? styles.right_block : ""}`}
     >
       <img alt="Order Icon" src={icon} width={106} height={100} />
-      <h5>{h}</h5>
-      <p>{title}</p>
+      <h5>{t(h)}</h5>
+      <p>{t(title)}</p>
     </article>
   );
 };

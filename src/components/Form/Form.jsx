@@ -8,9 +8,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { setClicked, setClickedAlert } from "../../redux/slices/formSlice";
 
 import { sendFormToTelegram } from "../../utils/sendTelegram";
+import { useContext } from "react";
+import Context from "../../hooks/useContext";
 
 const Form = () => {
   const { register, reset, handleSubmit } = useForm();
+  const t = useContext(Context);
   const form = useSelector((state) => state.form);
   const dispatch = useDispatch();
 
@@ -31,14 +34,20 @@ const Form = () => {
       <section className={styles.root}>
         <article className={styles.wrapper}>
           <div className={styles.info_block}>
-            <h1>ЗАПОВНІТЬ ФОРМУ</h1>
+            <h1>{t("form_h")}</h1>
             <div className={styles.contacts}>
-              <h5>Контакти</h5>
-              <a href="tel:">+38(095) 777-26-97</a>
-              <a href="tel:">+38(095) 777-26-97</a>
-              <a href="tel:">+38(095) 777-26-97</a>
+              <h5>{t("contact_h")}</h5>
+              <a href="tel:+380957772697">+38(095) 777-26-97</a>
+              <a href="tel:+380967772697">+38(096) 777-26-97</a>
+              <a href="tel:+380737772697">+38(073) 777-26-97</a>
               <a href="mailto:">example@gmail.com</a>
-              <a href="#">вул. Юрія Литвинського 33 м.Київ 02000</a>
+              <a
+                href="https://maps.app.goo.gl/4d7DExM4ooRvLDwx9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("address")}
+              </a>
             </div>
           </div>
           <div className={styles.empty_block}></div>
@@ -50,28 +59,28 @@ const Form = () => {
               height={30}
               onClick={() => dispatch(setClicked(false))}
             />
-            <h1>ЗАПОВНІТЬ ФОРМУ</h1>
+            <h1>{t("form_h")}</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
-                placeholder="Ім'я*"
+                placeholder={t("name")}
                 name="name"
                 required
                 {...register("name")}
               />
               <input
-                placeholder="Електронна пошта"
+                placeholder={t("email")}
                 name="mail"
                 {...register("mail")}
               />
               <input
-                placeholder="Номер телефону*"
+                placeholder={t("phone")}
                 name="phone"
                 required
                 {...register("phone")}
               />
               <button type="submit">
                 <img alt="Arrow" src={Arrow} width={25} height={25} />
-                Відправити
+                {t("form_btn")}
               </button>
             </form>
           </div>

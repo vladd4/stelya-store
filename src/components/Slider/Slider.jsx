@@ -13,7 +13,6 @@ const Slider = ({ images }) => {
     <Splide
       options={{
         height: mobile ? 80 : 130,
-        // heightRatio: 0.1,
         type: "loop",
         focus: "center",
         drag: true,

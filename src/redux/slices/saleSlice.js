@@ -20,6 +20,12 @@ export const fetchText = createAsyncThunk("sale/fetchText", async () => {
   return data.docs[0].data().saleText;
 });
 
+export const fetchTextRu = createAsyncThunk("sale/fetchTextRu", async () => {
+  const collectionRef = collection(db, "sale");
+  const data = await getDocs(collectionRef);
+  return data.docs[0].data().saleTextRu;
+});
+
 export const fetchTimer = createAsyncThunk("sale/fetchTimer", async () => {
   const collectionRef = collection(db, "sale");
   const data = await getDocs(collectionRef);
@@ -30,6 +36,8 @@ const initialState = {
   showSale: true,
   saleImage: null,
   saleText: null,
+  saleTextRu: null,
+  isRu: false,
   timerDate: null,
   status: "loading",
 };
@@ -37,7 +45,11 @@ const initialState = {
 export const saleSlice = createSlice({
   name: "sale",
   initialState,
-  reducers: {},
+  reducers: {
+    setRu(state, action) {
+      state.isRu = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchIsEmpty.pending, (state) => {
@@ -76,6 +88,18 @@ export const saleSlice = createSlice({
         state.saleText = null;
         state.status = "loading";
       })
+      .addCase(fetchTextRu.pending, (state) => {
+        state.saleTextRu = null;
+        state.status = "loading";
+      })
+      .addCase(fetchTextRu.fulfilled, (state, action) => {
+        state.saleTextRu = action.payload;
+        state.status = "loaded";
+      })
+      .addCase(fetchTextRu.rejected, (state) => {
+        state.saleTextRu = null;
+        state.status = "loading";
+      })
       .addCase(fetchTimer.pending, (state) => {
         state.timerDate = null;
         state.status = "loading";
@@ -90,5 +114,7 @@ export const saleSlice = createSlice({
       });
   },
 });
+
+export const { setRu } = saleSlice.actions;
 
 export default saleSlice.reducer;

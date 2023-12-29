@@ -4,9 +4,12 @@ import Logo from "../../assets/logo.png";
 import Arrow from "../../assets/arrow.png";
 import { useDispatch } from "react-redux";
 import { setClicked } from "../../redux/slices/formSlice";
+import { useContext } from "react";
+import Context from "../../hooks/useContext";
 
 const Welcome = () => {
   const dispatch = useDispatch();
+  const t = useContext(Context);
   const handleShowForm = () => {
     dispatch(setClicked(true));
   };
@@ -24,16 +27,11 @@ const Welcome = () => {
           width={230}
           height={240}
         />
-        <h1>
-          StelyaStore - ваш надійний партнер у створенні ідеальної обстановки
-        </h1>
-        <p>
-          Ми забезпечимо ваш комфорт та якість, гарантуючи прозорі ціни та
-          надійність протягом тривалого періоду гарантії
-        </p>
+        <h1>{t("welcome_h")}</h1>
+        <p>{t("welcome_p")}</p>
         <button onClick={handleShowForm}>
           <img alt="Arrow" src={Arrow} width={43} height={43} />
-          Хочу стелю
+          {t("welcome_btn")}
         </button>
       </article>
     </section>

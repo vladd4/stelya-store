@@ -12,7 +12,7 @@ const HomePage = () => {
       <Welcome />
       <Sale />
       <Services />
-      <Products title="ПРОДУКЦІЯ, ЯКУ МИ ВИКОРИСТОВУЄМО" id="products" />
+      <Products title="prod_h" id="products" />
       <Order />
       <Faq />
       <CalcBlock />

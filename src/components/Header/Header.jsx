@@ -6,18 +6,29 @@ import Return from "../../assets/Refund_back.png";
 import DropMenu from "../DropMenu/DropMenu";
 
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setRu } from "../../redux/slices/saleSlice";
 
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ t, i18n }) => {
   const [isClicked, setClicked] = useState(false);
+  const dispatch = useDispatch();
   const header = useSelector((state) => state.header);
   const handleShowDrop = () => {
     setClicked(true);
     if (document.querySelector(".opacity-components")) {
       document.querySelector(".opacity-components").style.opacity = "0.6";
     }
+  };
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+    language === "ru"
+      ? document.querySelector("#ru").classList.add(styles.current_lang)
+      : document.querySelector("#ru").classList.remove(styles.current_lang);
+    language === "ua"
+      ? document.querySelector("#ua").classList.add(styles.current_lang)
+      : document.querySelector("#ua").classList.remove(styles.current_lang);
   };
   return (
     <>
@@ -28,14 +39,31 @@ const Header = () => {
               header.isClicked ? styles.lang_white : ""
             }`}
           >
-            <p className={styles.current_lang}>Укр</p>
+            <p
+              id="ua"
+              className={styles.current_lang}
+              onClick={() => {
+                changeLanguage("ua");
+                dispatch(setRu(false));
+              }}
+            >
+              Укр
+            </p>
             <span>|</span>
-            <p>Рус</p>
+            <p
+              id="ru"
+              onClick={() => {
+                changeLanguage("ru");
+                dispatch(setRu(true));
+              }}
+            >
+              Рус
+            </p>
           </article>
           {header.isClicked ? (
             <Link to="/">
               <img width={30} height={30} alt="Back" src={Return} />
-              Повернутись на головну
+              {t("return_btn")}
             </Link>
           ) : (
             <img

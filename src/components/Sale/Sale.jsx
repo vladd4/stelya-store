@@ -9,21 +9,25 @@ import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
 import { useDispatch, useSelector } from "react-redux";
 import { setClicked } from "../../redux/slices/formSlice";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import {
   fetchImage,
   fetchIsEmpty,
   fetchText,
+  fetchTextRu,
   fetchTimer,
 } from "../../redux/slices/saleSlice";
+import Context from "../../hooks/useContext";
 
 const Sale = () => {
   const dispatch = useDispatch();
+  const t = useContext(Context);
   const sale = useSelector((state) => state.sale);
   useEffect(() => {
     dispatch(fetchIsEmpty());
     dispatch(fetchImage());
     dispatch(fetchText());
+    dispatch(fetchTextRu());
     dispatch(fetchTimer());
   }, []);
   return (
@@ -41,14 +45,11 @@ const Sale = () => {
             data-aos="fade-right"
             data-aos-duration="1500"
           >
-            <h3>Дякуємо за вірність</h3>
-            <p>
-              При повторному замовленні отримайте знижку 5% від вартості
-              послуги.
-            </p>
+            <h3>{t("sale_h1")}</h3>
+            <p>{t("sale_p1")}</p>
             <button onClick={() => dispatch(setClicked(true))}>
               <img alt="Arrow" width={40} height={40} src={ArrowBlack} />
-              Отримати знижку
+              {t("sale_btn")}
             </button>
           </div>
           <div
@@ -56,14 +57,11 @@ const Sale = () => {
             data-aos="fade-left"
             data-aos-duration="1500"
           >
-            <h3>Швидке замовлення</h3>
-            <p>
-              Укладіть угоду в день виміру та отримайте знижку 10% від вартості
-              послуги.
-            </p>
+            <h3>{t("sale_h2")}</h3>
+            <p>{t("sale_p2")}</p>
             <button onClick={() => dispatch(setClicked(true))}>
               <img alt="Arrow" width={40} height={40} src={ArrowWhite} />
-              Отримати знижку
+              {t("sale_btn")}
             </button>
           </div>
         </div>
@@ -76,7 +74,9 @@ const Sale = () => {
               style={{ backgroundImage: `url(${sale.saleImage})` }}
             ></div>
             <p data-aos="fade-up" data-aos-duration="1500">
-              {sale.saleText?.split(".").join("\n")}
+              {sale.isRu
+                ? sale.saleTextRu?.split(".").join("\n")
+                : sale.saleText?.split(".").join("\n")}
             </p>
             <Countdown date={String(sale.timerDate)} autoStart />
             <button
@@ -85,7 +85,7 @@ const Sale = () => {
               onClick={() => dispatch(setClicked(true))}
             >
               <img alt="Arrow" width={40} height={40} src={ArrowBlack} />
-              Отримати консультацію
+              {t("conslut_btn")}
             </button>
           </>
         ) : null}
