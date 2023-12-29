@@ -9,27 +9,34 @@ const CalcBlock = () => {
       <article className={styles.wrapper}>
         <h1>{t("calc_h")}</h1>
         <p>{t("calc_p")}</p>
-        <button
+        <a
+          href="https://www.side.systems/"
+          target="_blank"
+          rel="noreferrer"
           data-aos="fade-left"
           data-aos-duration="1500"
           className={styles.tg_btn}
         >
           Telegram
-        </button>
-        <button
+        </a>
+        <a
+          href="https://www.side.systems/"
+          target="_blank"
+          rel="noreferrer"
           data-aos="fade-right"
           data-aos-duration="1500"
           className={styles.viber_btn}
         >
           Viber
-        </button>
-        <button
+        </a>
+        <a
+          href="tel:+380967772697"
           data-aos="fade-left"
           data-aos-duration="1500"
           className={styles.tel_btn}
         >
           {t("calc_phone")}
-        </button>
+        </a>
       </article>
     </section>
   );

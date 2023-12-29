@@ -17,7 +17,7 @@ const Slider = ({ images }) => {
         focus: "center",
         drag: true,
         perPage: slides,
-        gap: "1%",
+        gap: "5%",
         autoplay: true,
         interval: 2500,
         pagination: false,

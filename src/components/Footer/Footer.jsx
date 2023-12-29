@@ -51,13 +51,25 @@ const Footer = () => {
               {t("address")}
             </a>
             <div className={styles.social_icons}>
-              <a href="http://some.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.side.systems/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img alt="Social" src={Inst} width={40} height={40} />
               </a>
-              <a href="http://some.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.side.systems/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img alt="Social" src={Face} width={40} height={40} />
               </a>
-              <a href="http://some.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.side.systems/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img alt="Social" src={Teleg} width={40} height={40} />
               </a>
             </div>
