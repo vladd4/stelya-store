@@ -33,7 +33,7 @@ const Slider = ({ images }) => {
                 id="slides"
                 style={{
                   backgroundImage: `url(${image})`,
-                  backgroundSize: "cover",
+                  backgroundSize: "contain",
                   backgroundPosition: "center",
                 }}
               />
