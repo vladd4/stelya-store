@@ -42,7 +42,7 @@ const Footer = () => {
             <a href="tel:+380957772697">+38(095) 777-26-97</a>
             <a href="tel:+380967772697">+38(096) 777-26-97</a>
             <a href="tel:+380737772697">+38(073) 777-26-97</a>
-            <a href="mailto:">example@gmail.com</a>
+            <a href="mailto:Stelyastore86@gmail.com">Stelyastore86@gmail.com</a>
             <a
               href="https://maps.app.goo.gl/4d7DExM4ooRvLDwx9"
               target="_blank"
@@ -52,21 +52,21 @@ const Footer = () => {
             </a>
             <div className={styles.social_icons}>
               <a
-                href="https://www.side.systems/"
+                href="https://www.instagram.com/stelya_store?igsh=MXVwZjVkcXFuNmhuZg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img alt="Social" src={Inst} width={40} height={40} />
               </a>
               <a
-                href="https://www.side.systems/"
+                href="https://www.facebook.com/profile.php?id=61554323112822"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img alt="Social" src={Face} width={40} height={40} />
               </a>
               <a
-                href="https://www.side.systems/"
+                href="https://t.me/+380967772697"
                 target="_blank"
                 rel="noreferrer"
               >

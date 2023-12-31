@@ -1,5 +1,15 @@
 @import '../../styles/variables';
 
+@mixin animate($animation,$duration,$method,$times){
+    animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}
+
 .root {
     width: 100%;
     display: grid;
@@ -113,6 +123,22 @@
         }
     }
 }
+
+.animated {
+    @include keyframes(fade1){
+        0%{
+        opacity: 0;
+        }
+       50%{
+        opacity: 0.5;
+        }
+       100%{
+        opacity: 1;
+       }
+      }
+    @include animate(fade1, 1s, linear, forwards);
+}
+
 .slider {
     display: none;
     width: 390px !important;

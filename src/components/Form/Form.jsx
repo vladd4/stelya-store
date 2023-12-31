@@ -40,7 +40,9 @@ const Form = () => {
               <a href="tel:+380957772697">+38(095) 777-26-97</a>
               <a href="tel:+380967772697">+38(096) 777-26-97</a>
               <a href="tel:+380737772697">+38(073) 777-26-97</a>
-              <a href="mailto:">example@gmail.com</a>
+              <a href="mailto:Stelyastore86@gmail.com">
+                Stelyastore86@gmail.com
+              </a>
               <a
                 href="https://maps.app.goo.gl/4d7DExM4ooRvLDwx9"
                 target="_blank"

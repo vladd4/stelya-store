@@ -45,7 +45,7 @@ function App() {
         <Form />
         <Header t={t} i18n={i18n} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage i18n={i18n} />} />
           <Route path="/products" element={<ProductInfo />} />
         </Routes>
         <Products title="partners_h" id="partners" images={partners.images} />

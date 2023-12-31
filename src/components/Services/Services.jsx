@@ -1,5 +1,7 @@
 import styles from "./Services.module.scss";
 
+import { useEffect, useRef } from "react";
+
 import Arrow from "../../assets/arrowWhite.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,17 +18,27 @@ import { service_links } from "../../static_store/services";
 
 const Services = () => {
   const t = useContext(Context);
+  const imageRef = useRef(null);
   const product = useSelector((state) => state.product);
   const toTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   };
   const dispatch = useDispatch();
-  const handleCLick = (title, text, image) => {
+  const handleCLick = (title, text, image, ref) => {
     dispatch(setHeading(title));
     dispatch(setText(text));
     dispatch(setImages(image));
+    ref.current.classList.add(styles.animated);
+    setTimeout(() => {
+      ref.current.classList.remove(styles.animated);
+    }, 1000);
   };
+  useEffect(() => {
+    service_links.forEach((item) => {
+      new Image().src = item.image[0];
+    });
+  }, []);
   return (
     <>
       <section className={styles.root} id="offers">
@@ -43,7 +55,7 @@ const Services = () => {
                   <p
                     key={link.title}
                     onClick={() =>
-                      handleCLick(link.title, link.text, link.image)
+                      handleCLick(link.title, link.text, link.image, imageRef)
                     }
                     className={
                       link.title === product.heading ? styles.current : ""
@@ -54,8 +66,8 @@ const Services = () => {
                 );
               })}
             </div>
-            <Slider links={service_links} />
-            <div className={styles.image_block}>
+            <Slider links={service_links} imageRef={imageRef} />
+            <div ref={imageRef} className={styles.image_block}>
               <p>{t(product.text)}</p>
               <Link to="/products" onClick={toTop}>
                 <img alt="Arrow" src={Arrow} width={30} height={30} />

@@ -3,12 +3,12 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "@firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCr-Ifo1DtSecLviu9BgflIaC4qSuiq1a4",
-  authDomain: "stelya-store.firebaseapp.com",
-  projectId: "stelya-store",
-  storageBucket: "stelya-store.appspot.com",
-  messagingSenderId: "809425179996",
-  appId: "1:809425179996:web:9504710d6b5c746fa49d99",
+  apiKey: "AIzaSyDWvEZ4Dik6weNDMl3-K_xnhcaQBv5hW0g",
+  authDomain: "stelya-store-dcb15.firebaseapp.com",
+  projectId: "stelya-store-dcb15",
+  storageBucket: "stelya-store-dcb15.appspot.com",
+  messagingSenderId: "889795805511",
+  appId: "1:889795805511:web:046f2bac6b503a5bfc4c62",
 };
 
 const app = initializeApp(firebaseConfig);

@@ -15,6 +15,7 @@ const Header = ({ t, i18n }) => {
   const [isClicked, setClicked] = useState(false);
   const dispatch = useDispatch();
   const header = useSelector((state) => state.header);
+
   const handleShowDrop = () => {
     setClicked(true);
     if (document.querySelector(".opacity-components")) {

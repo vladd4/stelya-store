@@ -2,8 +2,11 @@ import styles from "./Sale.module.scss";
 
 import ArrowBlack from "../../assets/arrowUp.png";
 import ArrowWhite from "../../assets/arrowWhite.png";
+
 import Line1 from "../../assets/ЗНИЖКА -30%.png";
 import Line2 from "../../assets/ЗНИЖКА -30% (1).png";
+import Line1_1 from "../../assets/СКИДКА -30%.png";
+import Line2_1 from "../../assets/СКИДКА -30% (1).png";
 
 import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
@@ -19,7 +22,7 @@ import {
 } from "../../redux/slices/saleSlice";
 import Context from "../../hooks/useContext";
 
-const Sale = () => {
+const Sale = ({ i18n }) => {
   const dispatch = useDispatch();
   const t = useContext(Context);
   const sale = useSelector((state) => state.sale);
@@ -33,10 +36,10 @@ const Sale = () => {
   return (
     <section className={styles.root} id="sale">
       <Marquee direction="right" className={styles.line2} autoFill={true}>
-        <img alt="Sale Amount" src={Line1} />
-        <img alt="Sale Amount" src={Line2} />
-        <img alt="Sale Amount" src={Line1} />
-        <img alt="Sale Amount" src={Line2} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
       </Marquee>
       <article className={styles.wrapper}>
         <div className={styles.cards_block}>
@@ -91,10 +94,10 @@ const Sale = () => {
         ) : null}
       </article>
       <Marquee direction="left" className={styles.line3} autoFill={true}>
-        <img alt="Sale Amount" src={Line1} />
-        <img alt="Sale Amount" src={Line2} />
-        <img alt="Sale Amount" src={Line1} />
-        <img alt="Sale Amount" src={Line2} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
+        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
       </Marquee>
     </section>
   );

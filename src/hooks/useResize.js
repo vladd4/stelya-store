@@ -8,12 +8,12 @@ const useResize = (setSlides, setMobile) => {
         if (windowWidth <= 450) {
           setSlides(2);
         } else if (windowWidth <= 650) {
-          setSlides(3);
+          setSlides(2);
         } else if (windowWidth <= 900) {
-          setSlides(4);
+          setSlides(3);
           setMobile(true);
         } else {
-          setSlides(5);
+          setSlides(4);
         }
       }
     };

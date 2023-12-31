@@ -10,7 +10,7 @@ const CalcBlock = () => {
         <h1>{t("calc_h")}</h1>
         <p>{t("calc_p")}</p>
         <a
-          href="https://www.side.systems/"
+          href="https://t.me/+380967772697"
           target="_blank"
           rel="noreferrer"
           data-aos="fade-left"
@@ -20,7 +20,7 @@ const CalcBlock = () => {
           Telegram
         </a>
         <a
-          href="https://www.side.systems/"
+          href="viber://chat?number=+380967772697"
           target="_blank"
           rel="noreferrer"
           data-aos="fade-right"

@@ -6,7 +6,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 const Slider = ({ images }) => {
-  const [slides, setSlides] = useState(5);
+  const [slides, setSlides] = useState(7);
   const [mobile, setMobile] = useState(false);
   useResize(setSlides, setMobile);
   return (
