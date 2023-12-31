@@ -28,15 +28,17 @@ const Slider = ({ images }) => {
       {images
         ? images.map((image, index) => {
             return (
-              <SplideSlide
-                key={index}
-                id="slides"
-                style={{
-                  backgroundImage: `url(${image})`,
-                  backgroundSize: "contain",
-                  backgroundPosition: "center",
-                }}
-              />
+              <SplideSlide key={index} id="slides">
+                {/* <div
+                  className={styles.slider_div}
+                  style={{
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                ></div> */}
+                <img src={image}></img>
+              </SplideSlide>
             );
           })
         : null}
