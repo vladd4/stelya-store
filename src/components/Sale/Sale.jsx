@@ -22,6 +22,8 @@ import {
 } from "../../redux/slices/saleSlice";
 import Context from "../../hooks/useContext";
 
+import ReactPixel from "react-facebook-pixel";
+
 const Sale = ({ i18n }) => {
   const dispatch = useDispatch();
   const t = useContext(Context);
@@ -33,6 +35,10 @@ const Sale = ({ i18n }) => {
     dispatch(fetchTextRu());
     dispatch(fetchTimer());
   }, []);
+  const showForm = () => {
+    dispatch(setClicked(true));
+    ReactPixel.track("InitiateCheckout");
+  };
   return (
     <section className={styles.root} id="sale">
       <Marquee direction="right" className={styles.line2} autoFill={true}>
@@ -50,7 +56,7 @@ const Sale = ({ i18n }) => {
           >
             <h3>{t("sale_h1")}</h3>
             <p>{t("sale_p1")}</p>
-            <button onClick={() => dispatch(setClicked(true))}>
+            <button onClick={showForm}>
               <img alt="Arrow" width={40} height={40} src={ArrowBlack} />
               {t("sale_btn")}
             </button>
@@ -62,7 +68,7 @@ const Sale = ({ i18n }) => {
           >
             <h3>{t("sale_h2")}</h3>
             <p>{t("sale_p2")}</p>
-            <button onClick={() => dispatch(setClicked(true))}>
+            <button onClick={showForm}>
               <img alt="Arrow" width={40} height={40} src={ArrowWhite} />
               {t("sale_btn")}
             </button>
@@ -85,7 +91,7 @@ const Sale = ({ i18n }) => {
             <button
               data-aos="fade-up"
               data-aos-duration="1500"
-              onClick={() => dispatch(setClicked(true))}
+              onClick={showForm}
             >
               <img alt="Arrow" width={40} height={40} src={ArrowBlack} />
               {t("conslut_btn")}

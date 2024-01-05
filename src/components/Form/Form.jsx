@@ -11,6 +11,8 @@ import { sendFormToTelegram } from "../../utils/sendTelegram";
 import { useContext } from "react";
 import Context from "../../hooks/useContext";
 
+import ReactPixel from "react-facebook-pixel";
+
 const Form = () => {
   const { register, reset, handleSubmit } = useForm();
   const t = useContext(Context);
@@ -27,6 +29,7 @@ const Form = () => {
     reset();
     dispatch(setClicked(false));
     dispatch(setClickedAlert(true));
+    ReactPixel.track("Purchase");
   };
 
   if (form.isClicked) {

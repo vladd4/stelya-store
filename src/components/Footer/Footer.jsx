@@ -12,6 +12,8 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useContext } from "react";
 import Context from "../../hooks/useContext";
 
+import ReactPixel from "react-facebook-pixel";
+
 const Footer = () => {
   const dispatch = useDispatch();
   const t = useContext(Context);
@@ -27,7 +29,12 @@ const Footer = () => {
             {t("offer_h")} <b>{t("offer_h_b")}</b>
             {t("offer_h2")}
           </h1>
-          <button onClick={() => dispatch(setClicked(true))}>
+          <button
+            onClick={() => {
+              dispatch(setClicked(true));
+              ReactPixel.track("InitiateCheckout");
+            }}
+          >
             <img alt="Arrow Up" src={Arrow} width={43} height={43} />
             {t("conslut_btn")}
           </button>

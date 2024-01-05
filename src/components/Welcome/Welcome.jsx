@@ -7,11 +7,14 @@ import { setClicked } from "../../redux/slices/formSlice";
 import { useContext } from "react";
 import Context from "../../hooks/useContext";
 
+import ReactPixel from "react-facebook-pixel";
+
 const Welcome = () => {
   const dispatch = useDispatch();
   const t = useContext(Context);
   const handleShowForm = () => {
     dispatch(setClicked(true));
+    ReactPixel.track("InitiateCheckout");
   };
   return (
     <section className={styles.root} id="welcome">
