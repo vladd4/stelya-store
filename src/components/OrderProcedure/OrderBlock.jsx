@@ -1,5 +1,7 @@
-import { useContext } from "react";
 import styles from "./OrderBlock.module.scss";
+
+import { useContext } from "react";
+
 import Context from "../../hooks/useContext";
 
 const OrderBlock = ({ icon, h, title, right, fade }) => {

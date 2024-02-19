@@ -1,10 +1,13 @@
 import styles from "./Alert.module.scss";
 
-import Close from "../../assets/close.png";
+import { useContext } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { setClickedAlert } from "../../redux/slices/formSlice";
-import { useContext } from "react";
+
 import Context from "../../hooks/useContext";
+
+import Close from "../../assets/close.png";
 
 const Alert = () => {
   const form = useSelector((state) => state.form);

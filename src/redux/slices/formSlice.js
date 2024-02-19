@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { hideShowBody, hideShowBodyProduct } from "../../utils/hideBody_helper";
+
+import { handleOpacity } from "../../utils/hideBody_helper";
+import {
+  main_elements_ids,
+  product_elements_ids,
+} from "../../static_store/element_ids";
 
 const initialState = {
   isClicked: false,
@@ -12,35 +17,11 @@ export const formSlice = createSlice({
   reducers: {
     setClicked(state, action) {
       state.isClicked = action.payload;
-      if (action.payload === true) {
-        if (document.querySelector("#welcome")) {
-          hideShowBody("hidden", "0.6", "none");
-        } else {
-          hideShowBodyProduct("hidden", "0.6", "none");
-        }
-      } else {
-        if (document.querySelector("#welcome")) {
-          hideShowBody("scroll", "1", "auto");
-        } else {
-          hideShowBodyProduct("scroll", "1", "auto");
-        }
-      }
+      handleOpacity(action, main_elements_ids, product_elements_ids);
     },
     setClickedAlert(state, action) {
       state.isClickedAlert = action.payload;
-      if (action.payload === true) {
-        if (document.querySelector("#welcome")) {
-          hideShowBody("hidden", "0.6", "none");
-        } else {
-          hideShowBodyProduct("hidden", "0.6", "none");
-        }
-      } else {
-        if (document.querySelector("#welcome")) {
-          hideShowBody("scroll", "1", "auto");
-        } else {
-          hideShowBodyProduct("scroll", "1", "auto");
-        }
-      }
+      handleOpacity(action, main_elements_ids, product_elements_ids);
     },
   },
 });

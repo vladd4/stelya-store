@@ -13,11 +13,11 @@ import ReactPixel from "react-facebook-pixel";
 import "./i18n";
 
 const options = {
-  autoConfig: true, // set pixel's autoConfig
-  debug: false, // enable logs
+  autoConfig: true,
+  debug: false,
 };
 
-ReactPixel.init("225984620448196", options);
+ReactPixel.init("679287641059905", options);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

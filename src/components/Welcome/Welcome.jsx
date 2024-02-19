@@ -1,17 +1,22 @@
 import styles from "./Welcome.module.scss";
 
-import Logo from "../../assets/logo.png";
-import Arrow from "../../assets/arrow.png";
+import { useContext } from "react";
+
 import { useDispatch } from "react-redux";
 import { setClicked } from "../../redux/slices/formSlice";
-import { useContext } from "react";
+
 import Context from "../../hooks/useContext";
 
+// eslint-disable-next-line
 import ReactPixel from "react-facebook-pixel";
+
+import Logo from "../../assets/logo.png";
+import Arrow from "../../assets/arrow.png";
 
 const Welcome = () => {
   const dispatch = useDispatch();
   const t = useContext(Context);
+
   const handleShowForm = () => {
     dispatch(setClicked(true));
     ReactPixel.track("InitiateCheckout");

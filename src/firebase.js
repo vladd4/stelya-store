@@ -3,12 +3,12 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "@firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDWvEZ4Dik6weNDMl3-K_xnhcaQBv5hW0g",
-  authDomain: "stelya-store-dcb15.firebaseapp.com",
-  projectId: "stelya-store-dcb15",
-  storageBucket: "stelya-store-dcb15.appspot.com",
-  messagingSenderId: "889795805511",
-  appId: "1:889795805511:web:046f2bac6b503a5bfc4c62",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

@@ -1,9 +1,11 @@
 import styles from "./Slider.module.scss";
-import { useState } from "react";
-import useResize from "../../hooks/useResize";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+
+import { useState } from "react";
+
+import useResize from "../../hooks/useResize";
 
 const Slider = ({ images }) => {
   const [slides, setSlides] = useState(7);
@@ -29,15 +31,7 @@ const Slider = ({ images }) => {
         ? images.map((image, index) => {
             return (
               <SplideSlide key={index} id="slides">
-                {/* <div
-                  className={styles.slider_div}
-                  style={{
-                    backgroundImage: `url(${image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                ></div> */}
-                <img src={image}></img>
+                <img alt={image} src={image} />
               </SplideSlide>
             );
           })

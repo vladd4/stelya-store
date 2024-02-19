@@ -1,17 +1,21 @@
 import styles from "./Form.module.scss";
 
-import Close from "../../assets/Group 3.png";
-import Arrow from "../../assets/arrow.png";
+import { useContext } from "react";
 
 import { useForm } from "react-hook-form";
+
 import { useSelector, useDispatch } from "react-redux";
 import { setClicked, setClickedAlert } from "../../redux/slices/formSlice";
 
 import { sendFormToTelegram } from "../../utils/sendTelegram";
-import { useContext } from "react";
+
 import Context from "../../hooks/useContext";
 
+// eslint-disable-next-line
 import ReactPixel from "react-facebook-pixel";
+
+import Close from "../../assets/Group 3.png";
+import Arrow from "../../assets/arrow.png";
 
 const Form = () => {
   const { register, reset, handleSubmit } = useForm();
@@ -29,7 +33,10 @@ const Form = () => {
     reset();
     dispatch(setClicked(false));
     dispatch(setClickedAlert(true));
-    ReactPixel.track("Purchase");
+    ReactPixel.track("Purchase", {
+      value: 1,
+      currency: "USD",
+    });
   };
 
   if (form.isClicked) {

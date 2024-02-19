@@ -1,12 +1,14 @@
 import styles from "./DropMenu.module.scss";
 
-import Logo from "../../assets/logo.png";
-
 import { useRef, useEffect, useContext } from "react";
+
 import AnchorLink from "react-anchor-link-smooth-scroll";
+
 import Context from "../../hooks/useContext";
 
 import { links } from "../../static_store/drop_links";
+
+import Logo from "../../assets/logo.png";
 
 const DropMenu = ({ setClicked, isClicked }) => {
   const componentRef = useRef(null);

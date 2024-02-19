@@ -22,6 +22,6 @@ const useResize = (setSlides, setMobile) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [setMobile, setSlides]);
 };
 export default useResize;

@@ -1,18 +1,11 @@
 import styles from "./Sale.module.scss";
 
-import ArrowBlack from "../../assets/arrowUp.png";
-import ArrowWhite from "../../assets/arrowWhite.png";
+import { useContext, useEffect } from "react";
 
-import Line1 from "../../assets/ЗНИЖКА -30%.png";
-import Line2 from "../../assets/ЗНИЖКА -30% (1).png";
-import Line1_1 from "../../assets/СКИДКА -30%.png";
-import Line2_1 from "../../assets/СКИДКА -30% (1).png";
-
-import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
+
 import { useDispatch, useSelector } from "react-redux";
 import { setClicked } from "../../redux/slices/formSlice";
-import { useContext, useEffect } from "react";
 import {
   fetchImage,
   fetchIsEmpty,
@@ -20,33 +13,36 @@ import {
   fetchTextRu,
   fetchTimer,
 } from "../../redux/slices/saleSlice";
+
 import Context from "../../hooks/useContext";
 
+// eslint-disable-next-line
 import ReactPixel from "react-facebook-pixel";
+
+import ArrowBlack from "../../assets/arrowUp.png";
+import ArrowWhite from "../../assets/arrowWhite.png";
+import MarqueeLine from "./Marquee";
 
 const Sale = ({ i18n }) => {
   const dispatch = useDispatch();
   const t = useContext(Context);
   const sale = useSelector((state) => state.sale);
+
+  const showForm = () => {
+    dispatch(setClicked(true));
+    ReactPixel.track("InitiateCheckout");
+  };
+
   useEffect(() => {
     dispatch(fetchIsEmpty());
     dispatch(fetchImage());
     dispatch(fetchText());
     dispatch(fetchTextRu());
     dispatch(fetchTimer());
-  }, []);
-  const showForm = () => {
-    dispatch(setClicked(true));
-    ReactPixel.track("InitiateCheckout");
-  };
+  }, [dispatch]);
   return (
     <section className={styles.root} id="sale">
-      <Marquee direction="right" className={styles.line2} autoFill={true}>
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
-      </Marquee>
+      <MarqueeLine direction="right" i18n={i18n} />
       <article className={styles.wrapper}>
         <div className={styles.cards_block}>
           <div
@@ -99,12 +95,7 @@ const Sale = ({ i18n }) => {
           </>
         ) : null}
       </article>
-      <Marquee direction="left" className={styles.line3} autoFill={true}>
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line1 : Line1_1} />
-        <img alt="Sale Amount" src={i18n.language === "ua" ? Line2 : Line2_1} />
-      </Marquee>
+      <MarqueeLine direction="left" i18n={i18n} />
     </section>
   );
 };

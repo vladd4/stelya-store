@@ -1,7 +1,12 @@
 import styles from "./Order.module.scss";
-import OrderColumn from "./OrderColumn";
+
 import { useContext } from "react";
+
+import OrderColumn from "./OrderColumn";
+
 import Context from "../../hooks/useContext";
+
+const order_numbers = [2, 3, 4, 5, 6];
 
 const Order = () => {
   const t = useContext(Context);
@@ -12,16 +17,14 @@ const Order = () => {
         <OrderColumn />
         <article className={styles.line_block}>
           <div className={styles.active_div}>1</div>
-          <span></span>
-          <div>2</div>
-          <span></span>
-          <div>3</div>
-          <span></span>
-          <div>4</div>
-          <span></span>
-          <div>5</div>
-          <span></span>
-          <div>6</div>
+          {order_numbers.map((number) => {
+            return (
+              <>
+                <span></span>
+                <div>{number}</div>
+              </>
+            );
+          })}
         </article>
       </article>
     </section>

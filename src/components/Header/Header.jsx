@@ -1,15 +1,15 @@
 import styles from "./Header.module.scss";
 
-import Burger from "../../assets/burger.png";
-import Return from "../../assets/Refund_back.png";
-
 import DropMenu from "../DropMenu/DropMenu";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import { setRu } from "../../redux/slices/saleSlice";
 
-import { Link } from "react-router-dom";
+import Burger from "../../assets/burger.png";
+import Return from "../../assets/Refund_back.png";
 
 const Header = ({ t, i18n }) => {
   const [isClicked, setClicked] = useState(false);
@@ -22,6 +22,7 @@ const Header = ({ t, i18n }) => {
       document.querySelector(".opacity-components").style.opacity = "0.6";
     }
   };
+
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
     language === "ru"

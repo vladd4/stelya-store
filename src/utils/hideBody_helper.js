@@ -1,29 +1,27 @@
-export const hideShowBody = (overflow, opacity, events) => {
+export const hideShowBody = (elementIds, overflow, opacity, events) => {
   document.body.style.overflowY = overflow;
-  document.querySelector("#welcome").style.opacity = opacity;
-  document.querySelector("#welcome").style.pointerEvents = events;
-  document.querySelector("#sale").style.opacity = opacity;
-  document.querySelector("#sale").style.pointerEvents = events;
-  document.querySelector("#offers").style.opacity = opacity;
-  document.querySelector("#offers").style.pointerEvents = events;
-  document.querySelector("#products").style.opacity = opacity;
-  document.querySelector("#products").style.pointerEvents = events;
-  document.querySelector("#workingstages").style.opacity = opacity;
-  document.querySelector("#workingstages").style.pointerEvents = events;
-  document.querySelector("#consultation").style.opacity = opacity;
-  document.querySelector("#consultation").style.pointerEvents = events;
-  document.querySelector("#contacts").style.opacity = opacity;
-  document.querySelector("#contacts").style.pointerEvents = events;
-  document.querySelector("#partners").style.opacity = opacity;
-  document.querySelector("#partners").style.pointerEvents = events;
-  document.querySelector("#form").style.opacity = opacity;
-  document.querySelector("#form").style.pointerEvents = events;
+
+  elementIds.forEach((id) => {
+    const element = document.querySelector(`#${id}`);
+    if (element) {
+      element.style.opacity = opacity;
+      element.style.pointerEvents = events;
+    }
+  });
 };
 
-export const hideShowBodyProduct = (overflow, opacity, events) => {
-  document.body.style.overflowY = overflow;
-  document.querySelector("#partners").style.opacity = opacity;
-  document.querySelector("#partners").style.pointerEvents = events;
-  document.querySelector("#contacts").style.opacity = opacity;
-  document.querySelector("#contacts").style.pointerEvents = events;
+export const handleOpacity = (action, main_ids, product_ids) => {
+  if (action.payload === true) {
+    if (document.querySelector("#welcome")) {
+      hideShowBody(main_ids, "hidden", "0.6", "none");
+    } else {
+      hideShowBody(product_ids, "hidden", "0.6", "none");
+    }
+  } else {
+    if (document.querySelector("#welcome")) {
+      hideShowBody(main_ids, "scroll", "1", "auto");
+    } else {
+      hideShowBody(product_ids, "scroll", "1", "auto");
+    }
+  }
 };

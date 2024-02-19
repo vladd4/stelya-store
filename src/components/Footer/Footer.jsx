@@ -1,18 +1,22 @@
 import styles from "./Footer.module.scss";
 
+import { useContext } from "react";
+
+import { useDispatch } from "react-redux";
+import { setClicked } from "../../redux/slices/formSlice";
+
+import Context from "../../hooks/useContext";
+
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
+// eslint-disable-next-line
+import ReactPixel from "react-facebook-pixel";
+
 import Inst from "../../assets/instagram-icon.png";
 import Face from "../../assets/facebook-icon.png";
 import Teleg from "../../assets/telegram-icon.png";
 import Arrow from "../../assets/arrowUp.png";
 import Logo from "../../assets/logo.png";
-import { useDispatch } from "react-redux";
-import { setClicked } from "../../redux/slices/formSlice";
-
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { useContext } from "react";
-import Context from "../../hooks/useContext";
-
-import ReactPixel from "react-facebook-pixel";
 
 const Footer = () => {
   const dispatch = useDispatch();

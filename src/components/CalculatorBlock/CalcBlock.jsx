@@ -1,5 +1,7 @@
-import { useContext } from "react";
 import styles from "./CalcBlock.module.scss";
+
+import { useContext } from "react";
+
 import Context from "../../hooks/useContext";
 
 const CalcBlock = () => {

@@ -1,5 +1,7 @@
 import styles from "./Services.module.scss";
 
+import { useContext } from "react";
+
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
@@ -10,7 +12,7 @@ import {
   setText,
   setImages,
 } from "../../redux/slices/productSlice";
-import { useContext } from "react";
+
 import Context from "../../hooks/useContext";
 
 const Slider = ({ links, imageRef }) => {

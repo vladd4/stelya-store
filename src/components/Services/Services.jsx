@@ -1,18 +1,20 @@
 import styles from "./Services.module.scss";
 
-import { useEffect, useRef } from "react";
-
-import Arrow from "../../assets/arrowWhite.png";
+import { useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   setHeading,
   setImages,
   setText,
 } from "../../redux/slices/productSlice";
+
 import Slider from "./LinkSlider";
-import { useContext } from "react";
+
 import Context from "../../hooks/useContext";
+
+import Arrow from "../../assets/arrowWhite.png";
 
 import { service_links } from "../../static_store/services";
 
@@ -20,11 +22,13 @@ const Services = () => {
   const t = useContext(Context);
   const imageRef = useRef(null);
   const product = useSelector((state) => state.product);
+  const dispatch = useDispatch();
+
   const toTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   };
-  const dispatch = useDispatch();
+
   const handleCLick = (title, text, image, ref) => {
     dispatch(setHeading(title));
     dispatch(setText(text));
@@ -34,6 +38,7 @@ const Services = () => {
       ref.current.classList.remove(styles.animated);
     }, 1000);
   };
+
   useEffect(() => {
     service_links.forEach((item) => {
       new Image().src = item.image[0];
